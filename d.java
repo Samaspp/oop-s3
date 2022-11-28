@@ -48,17 +48,20 @@ public node tail=null;
              head = newn;  
         }  
     }  
-public void addM(int data,int pr) {  
-        
+  {
+     }
+public void addM(int data, int pr) {  
+    int c=1;
     node newn = new node(data);  
-     node current = head;  
+    node current = head;  
+    
         if(head == null) {  
             System.out.println("List is empty");  
             return;  
         } 
         
         while(current != null) {  
-            if(current.data==pr){
+            if(c==pr-1){
            // newn.data=pr;
            
     newn.next =current.next;
@@ -73,6 +76,7 @@ public void addM(int data,int pr) {
     if (newn.next != null)
         newn.next.prev = newn;
         }  current=current.next;
+        c++;
     }  
   }
 
@@ -135,7 +139,7 @@ public void addM(int data,int pr) {
        switch(ch)
        {
         case 1: {
-			  System.out.println("\n\n1. add at head\n2. add at tail\n3. add at middle\n enter: ");
+			  System.out.println("\n\n1. add at head\n2. add at tail\n3. add at any position\n enter: ");
                     int a=sc.nextInt();
                     System.out.println("Enter data to be added: ");
                     int da=sc.nextInt();
@@ -146,7 +150,7 @@ public void addM(int data,int pr) {
                     else if(a==2){
                     dll.addNode(da);}
                     else{
-                    System.out.println("enter previous data: ");
+                    System.out.println("enter position: ");
                     int pr=sc.nextInt();
                     dll.addM(da,pr) ;
                     }
