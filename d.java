@@ -2,7 +2,7 @@
 import java.io.*;
 import java.util.*;
 
-public class d{
+public class df{
 class node{
 int data;
 node prev;
@@ -49,9 +49,9 @@ public node tail=null;
              head = newn;  
         }  
     }  
-  {
-     }
+  
 public void addM(int data, int pr) {  
+   int d=data;
     int c=1;
     node newn = new node(data);  
     node current = head;  
@@ -60,8 +60,8 @@ public void addM(int data, int pr) {
             System.out.println("List is empty");  
             return;  
         } 
-        if(pr==1){addStart(data);} 
-      else  while(current != null) { 
+        if(pr==1){addStart(d);} 
+      else  while(current.next != null) { 
         
             if(c==pr-1){
            // newn.data=pr;
@@ -84,7 +84,7 @@ public void addM(int data, int pr) {
 
 
      public void delete(int dl) {
-       
+        int flag=0;
         node current = head;  
         if(head == null) {  
             System.out.println("List is empty");  
@@ -94,11 +94,6 @@ public void addM(int data, int pr) {
         
         while(current != null) {  
             if(current.data==dl){
-        
-       
-        if (head==null) {
-            head = current.next;
-        }
  
         if (current.next != null) {
             current.next.prev = current.prev;
@@ -106,11 +101,12 @@ public void addM(int data, int pr) {
  
         if (current.prev != null) {
             current.prev.next = current.next;
-        }
+        }flag++;
         }current=current.next;}
-         current=null;
-        
+         //current=null;
+        if(flag!=0)
         System.out.println("deleted");
+        else System.out.println("Element not found");
         return;
     } 
   
@@ -154,7 +150,8 @@ public void addM(int data, int pr) {
                     else{
                     System.out.println("enter position: ");
                     int pr=sc.nextInt();
-                    dll.addM(da,pr) ;
+                    if(pr==1)dll.addStart(da);
+                   else  dll.addM(da,pr) ;
                     }
                     break;}
         case 2: {
@@ -173,4 +170,4 @@ public void addM(int data, int pr) {
        }
      }
     }
-   }                    
+   }     
