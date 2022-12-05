@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 
@@ -59,8 +60,9 @@ public void addM(int data, int pr) {
             System.out.println("List is empty");  
             return;  
         } 
+        if(pr==1){addStart(data);} 
+      else  while(current != null) { 
         
-        while(current != null) {  
             if(c==pr-1){
            // newn.data=pr;
            
@@ -171,5 +173,4 @@ public void addM(int data, int pr) {
        }
      }
     }
-   }
-                    
+   }                    
